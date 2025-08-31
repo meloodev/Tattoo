@@ -34,7 +34,7 @@
 }
 
 
-.pageNotFound__inner button {
+.pageNotFound__inner a {
     padding: 5px 12px;
     background-color: #615fff;
     border-radius: 4px;
@@ -46,12 +46,12 @@
     font-family: inherit;
 }
 
-.pageNotFound__inner button:active {
+.pageNotFound__inner a:active {
     scale: 1.02;
 }
 
 @media (hover: hover) {
-    .pageNotFound__inner button:hover {
+    .pageNotFound__inner a:hover {
         background-color: #605ef2;
     }
 }

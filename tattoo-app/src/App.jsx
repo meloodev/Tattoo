@@ -2,15 +2,19 @@ import SignIn from "./components/SignIn/signIn";
 import Registration from './components/Registration/Registration';
 import Recovery from './components/Recovery/Recovery';
 import PageNotFound from "./components/PageNotFound/PageNotFound";
+import CardItem from "./components/CardItem/CardItem";
 
 import './App.css';
 const App = () => {
   return (
     <>
-      {/* <SignIn />
+     <div className="container">
+       <SignIn />
       <Registration />
-      <Recovery />*/}
-      <PageNotFound />
+      <Recovery />
+      {/* <PageNotFound /> */}
+      <CardItem />
+     </div>
     </>
   )
 }
