@@ -10,10 +10,10 @@ const App = () => {
     <>
      <div className="container">
        <SignIn />
-      <Registration />
-      <Recovery />
+      {/* <Registration /> */}
+      {/* <Recovery /> */}
       {/* <PageNotFound /> */}
-      <CardItem />
+      {/* <CardItem /> */}
      </div>
     </>
   )

@@ -11,65 +11,75 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 const schema = z.object({
     name: z.string()
-    .min(2, "Name is too short")
-    .max(30, "Name is too long")                
-    .regex(/^[A-Za-z]+$/, "Name must contain only letters"), 
+        .min(2, "Name is too short")
+        .max(30, "Name is too long")
+        .regex(/^[A-Za-z]+$/, "Name must contain only letters"),
 
-  surname: z.string()
-    .min(2, "Surname is too short")             
-    .max(30, "Surname is too long")             
-    .regex(/^[A-Za-z]+$/, "Surname must contain only letters"),
+    surname: z.string()
+        .min(2, "Surname is too short")
+        .max(30, "Surname is too long")
+        .regex(/^[A-Za-z]+$/, "Surname must contain only letters"),
 
-  phone: z.string()
-    .min(10, "Phone number is too short")
-    .max(15, "Phone number is too long")        
-    .regex(/^\d+$/, "Phone must contain only numbers"),
+    phone: z.string()
+        .min(10, "Phone number is too short")
+        .max(15, "Phone number is too long")
+        .regex(/^\d+$/, "Phone must contain only numbers"),
 
-  email: z.string()
-    .email("Enter a valid email")
-    .min(5, "Email is too short")                         
-    .max(30, "Email is too long")                            
-    .refine(val => !val.includes("@mail.ru"), {              
-      message: "Email must **not** be on the domain mail.ru"
-    }),
+    email: z.string()
+        .email("Enter a valid email")
+        .min(5, "Email is too short")
+        .max(30, "Email is too long")
+        .refine(val => !val.includes("@mail.ru"), {
+            message: "Email must **not** be on the domain mail.ru"
+        }),
 
-  password: z.string()
-    .min(8, "Minimum 8 characters")                               
-    .refine(val => /[A-Z]/.test(val), { message: "Must contain an uppercase letter" })
-    .refine(val => /[0-9]/.test(val), { message: "Must contain a number" }),
+    password: z.string()
+        .min(8, "Minimum 8 characters")
+        .refine(val => /[A-Z]/.test(val), { message: "Must contain an uppercase letter" })
+        .refine(val => /[0-9]/.test(val), { message: "Must contain a number" }),
 
-  passConfirm: z.string()
-    .min(8, "Minimum 8 characters")                               
-    .refine(val => /[A-Z]/.test(val), { message: "Must contain an uppercase letter" })
-    .refine(val => /[0-9]/.test(val), { message: "Must contain a number" })
+    passConfirm: z.string()
+        .min(8, "Minimum 8 characters")
+        .refine(val => /[A-Z]/.test(val), { message: "Must contain an uppercase letter" })
+        .refine(val => /[0-9]/.test(val), { message: "Must contain a number" })
 
 }).refine(data => data.password === data.passConfirm, {
-  message: "Passwords do not match",
-  path: ["passConfirm"],
-    });
+    message: "Passwords do not match",
+    path: ["passConfirm"],
+});
 
 
 const Registration = () => {
 
-    const [password, setPassword] = useState(true);
+    const [password, setPassword] = useState(true); // parolis xilvadoba
+    const [confirmPassword, setConfirmPassword] = useState(true);  // confirm parolis xilvadoba
+
+
+    const viewConfirmPassword = () => {
+        const passConfirmVal = watch("passConfirm");
+        if (passConfirmVal.length > 0) {
+            setConfirmPassword(val => !val);
+        }
+    }
+
     const viewPassword = () => {
-        setPassword(val => !val);
+        const passwordValue = watch("password");
+        if (passwordValue.length > 0) {
+            setPassword(val => !val);
+        }
     }
-
-    const [confirmPassword, setConfirmPassword] = useState(true);
-     const viewConfirmPassword = () => {
-        setConfirmPassword(val => !val);
-    }
-/////////////////////
+    /////////////////////
 
 
-      const { register, handleSubmit, formState: { errors }} = useForm({
+    const { watch, register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(schema),
-      });
-    
-       const onSubmit = (data) => {
+        mode: "onChange", // cvlilebebis dros
+        reValidateMode: "onChange" // sheyvanis dros
+    });
+
+    const onSubmit = (data) => {
         console.log("Form passed validation", data);
-      };
+    };
 
 
     return (
@@ -81,22 +91,22 @@ const Registration = () => {
             <form onSubmit={handleSubmit(onSubmit)} noValidate>
                 <div className="registration__name">
                     <label htmlFor="reg-name">Name</label>
-                    <input className={`input${errors.name ? " input__err" : ""}`} id="reg-name" type="text" {...register("name")} autoComplete="name"/>
+                    <input className={`input${errors.name ? " input__err" : ""}`} id="reg-name" type="text" {...register("name")} autoComplete="name" />
                     <span className='reg__name-errmsg'>{errors.name && errors.name.message}</span>
                 </div>
                 <div className="registration__surname">
                     <label htmlFor="reg-surname">Surname</label>
-                    <input className={`input${errors.surname ? " input__err" : ""}`} id="reg-surname" type="text" {...register("surname")} autoComplete="family-name"/>
+                    <input className={`input${errors.surname ? " input__err" : ""}`} id="reg-surname" type="text" {...register("surname")} autoComplete="family-name" />
                     <span className='reg__surname-errmsg'>{errors.surname && errors.surname.message}</span>
                 </div>
                 <div className="registration__phone">
                     <label htmlFor="reg-phone">Phone</label>
-                    <input className={`input${errors.phone ? " input__err" : ""}`} id="reg-phone" type="tel" {...register("phone")} autoComplete="phone"/>
+                    <input className={`input${errors.phone ? " input__err" : ""}`} id="reg-phone" type="tel" {...register("phone")} autoComplete="phone" />
                     <span className='reg__phone-errmsg'>{errors.phone && errors.phone.message}</span>
                 </div>
                 <div className="registration__email">
                     <label htmlFor="reg-email">Email address</label>
-                    <input className={`input${errors.email ? " input__err" : ""}`} id="reg-email" type="email" {...register("email")} autoComplete="email"/>
+                    <input className={`input${errors.email ? " input__err" : ""}`} id="reg-email" type="email" {...register("email")} autoComplete="email" />
                     <span className='reg__email-errmsg'>{errors.email && errors.email.message}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                         <path
@@ -105,7 +115,7 @@ const Registration = () => {
                 </div>
                 <div className="registration__password">
                     <label htmlFor="reg-pwd">Password</label>
-                    <input className={`input${errors.password ? " input__err" : ""}`} id="reg-pwd" type={password ? 'password' : 'text'}  placeholder="**********" {...register("password")} />
+                    <input className={`input${errors.password ? " input__err" : ""}`} id="reg-pwd" type={password ? 'password' : 'text'} placeholder="**********" {...register("password")} />
                     <span className='reg__password-errmsg'>{errors.password && errors.password.message}</span>
                     <svg onClick={viewPassword} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill={password ? '#d1d5dc' : '#a3a8b1'}>
                         <path
