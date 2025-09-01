@@ -31,7 +31,7 @@ const SignIn = () => {
   });
 
    const onSubmit = (data) => {
-    console.log("Форма прошла валидацию ✅", data);
+    console.log("Form passed validation", data);
   };
 
     return (
