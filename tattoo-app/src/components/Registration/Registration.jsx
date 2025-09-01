@@ -51,6 +51,7 @@ const schema = z.object({
 
 const Registration = () => {
 
+
     const [password, setPassword] = useState(true); // parolis xilvadoba
     const [confirmPassword, setConfirmPassword] = useState(true);  // confirm parolis xilvadoba
 
@@ -91,22 +92,49 @@ const Registration = () => {
             <form onSubmit={handleSubmit(onSubmit)} noValidate>
                 <div className="registration__name">
                     <label htmlFor="reg-name">Name</label>
-                    <input className={`input${errors.name ? " input__err" : ""}`} id="reg-name" type="text" {...register("name")} autoComplete="name" />
+                   
+                    <input className=
+                    {`input${errors.name ? " input__err" : ""}`} 
+                    id="reg-name" type="text" 
+                    {...register("name")} 
+                    autoComplete="name" 
+                    />
+
                     <span className='reg__name-errmsg'>{errors.name && errors.name.message}</span>
                 </div>
                 <div className="registration__surname">
                     <label htmlFor="reg-surname">Surname</label>
-                    <input className={`input${errors.surname ? " input__err" : ""}`} id="reg-surname" type="text" {...register("surname")} autoComplete="family-name" />
+                    <input className=
+                    {`input${errors.surname ? " input__err" : ""}`} 
+                    id="reg-surname" type="text" 
+                    {...register("surname")} 
+                    autoComplete="family-name" 
+                    />
+
                     <span className='reg__surname-errmsg'>{errors.surname && errors.surname.message}</span>
                 </div>
                 <div className="registration__phone">
                     <label htmlFor="reg-phone">Phone</label>
-                    <input className={`input${errors.phone ? " input__err" : ""}`} id="reg-phone" type="tel" {...register("phone")} autoComplete="phone" />
+                   
+                    <input className=
+                    {`input${errors.phone ? " input__err" : ""}`} 
+                    id="reg-phone" 
+                    type="tel" {...register("phone")} 
+                    autoComplete="phone" 
+                    />
+
                     <span className='reg__phone-errmsg'>{errors.phone && errors.phone.message}</span>
                 </div>
                 <div className="registration__email">
                     <label htmlFor="reg-email">Email address</label>
-                    <input className={`input${errors.email ? " input__err" : ""}`} id="reg-email" type="email" {...register("email")} autoComplete="email" />
+                    
+                    <input className=
+                    {`input${errors.email ? " input__err" : ""}`} 
+                    id="reg-email" type="email" 
+                    {...register("email")} 
+                    autoComplete="email" 
+                    />
+                    
                     <span className='reg__email-errmsg'>{errors.email && errors.email.message}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                         <path

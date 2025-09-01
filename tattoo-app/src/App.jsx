@@ -9,8 +9,8 @@ const App = () => {
   return (
     <>
      <div className="container">
-       <SignIn />
-      {/* <Registration /> */}
+       {/* <SignIn /> */}
+      <Registration />
       {/* <Recovery /> */}
       {/* <PageNotFound /> */}
       {/* <CardItem /> */}
