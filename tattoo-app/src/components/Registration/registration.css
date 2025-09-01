@@ -38,6 +38,24 @@
     font-size: 14px;
 }
 
+.registration form .input.input__err {
+    border-color: tomato !important;
+}
+
+.registration form .reg__name-errmsg,
+.registration form .reg__surname-errmsg,
+.registration form .reg__phone-errmsg,
+.registration form .reg__email-errmsg,
+.registration form .reg__password-errmsg,
+.registration form .reg__passConfirm-errmsg {
+    color: tomato;
+    font-size: 11px;
+    display: inline-block;
+    width: 100%;
+    min-height: 100%;
+    font-weight: 300;
+} 
+
 .registration form .input::placeholder {
     font-size: 16px;
 }
@@ -80,7 +98,7 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    top: 69%;
+    top: 54%;
     transform: translateY(-50%);
     right: 5px;
     fill: #d1d5dc;
@@ -91,10 +109,10 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    top: 70%;
+    top: 54%;
     transform: translateY(-50%);
     right: 7px;
-    fill: #d1d5dc;
+    /* fill: #d1d5dc; */
 }
 
 .registration__remember {

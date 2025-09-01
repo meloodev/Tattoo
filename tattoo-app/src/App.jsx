@@ -1,4 +1,4 @@
-import SignIn from "./components/SignIn/signIn";
+import SignIn from "./components/SignIn/SignIn";
 import Registration from './components/Registration/Registration';
 import Recovery from './components/Recovery/Recovery';
 import PageNotFound from "./components/PageNotFound/PageNotFound";
