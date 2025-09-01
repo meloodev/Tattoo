@@ -7,10 +7,10 @@ import './App.css';
 const App = () => {
   return (
     <>
-      {/* <SignIn />
-      <Registration />
-      <Recovery />*/}
-      <PageNotFound />
+       <SignIn />
+      {/* <Registration /> */}
+      {/* <Recovery /> */}
+      {/* <PageNotFound /> */}
     </>
   )
 }
