@@ -3,7 +3,7 @@ import './cardItem.css';
 
 const CardItem = () => {
     return (
-        <div className="card">
+        <li className="card">
             <div className="card__image">
                 <img src={cardImg} alt="img" />
                 <span>39% OFF</span>
@@ -30,7 +30,7 @@ const CardItem = () => {
                 Add to cart
             </a>
 
-        </div>
+        </li>
     )
 }
 

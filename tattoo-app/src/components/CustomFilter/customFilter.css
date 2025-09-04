@@ -1,0 +1,29 @@
+.filter__items {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.filter__items li .filter__item {
+    padding: 4px 12px;
+    border-radius: 99px;
+    color: #1f1f1f;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 400;
+    background-color: #e9eef6;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.filter__items li .filter__item:active,
+.filter__items li .filter__item:focus {
+    background-color: #dadfe7;
+}
+
+@media (hover: hover) {
+    .filter__items li .filter__item:hover {
+        background-color: #dadfe7;
+    }
+}

@@ -7,7 +7,7 @@ const PageNotFound = () => {
                 <h2>
                     <span>404</span>|<span>Not Found</span>
                 </h2>
-                <a href='#'>back to home page</a>
+                <a className='go__back' href='#'>back to home page</a>
             </div>
         </div>
     )

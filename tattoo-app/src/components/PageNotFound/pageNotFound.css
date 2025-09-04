@@ -34,7 +34,7 @@
 }
 
 
-.pageNotFound__inner a {
+.pageNotFound__inner .go__back {
     padding: 5px 12px;
     background-color: #615fff;
     border-radius: 4px;
@@ -46,12 +46,12 @@
     font-family: inherit;
 }
 
-.pageNotFound__inner a:active {
+.pageNotFound__inner .go__back:active {
     scale: 1.02;
 }
 
 @media (hover: hover) {
-    .pageNotFound__inner a:hover {
+    .pageNotFound__inner .go__back:hover {
         background-color: #605ef2;
     }
 }
