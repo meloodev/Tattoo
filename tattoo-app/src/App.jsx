@@ -24,10 +24,7 @@ const App = () => {
               <CardItem />
               <CardItem />
               <CardItem />
-              <CardItem />
-              <CardItem />
-              <CardItem />
-              <CardItem />
+              
             </ul>
           </div>
         </section>
