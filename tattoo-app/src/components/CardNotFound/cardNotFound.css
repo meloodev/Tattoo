@@ -1,0 +1,43 @@
+.cardNotFound {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.cardNotFound__inner h2 {
+    color: #a0aec0;
+    text-transform: uppercase;
+    font-size: 18px;
+    user-select: none;
+    font-family: inherit;
+    font-weight: 400;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* .pageNotFound__inner .go__back {
+    padding: 5px 12px;
+    background-color: #615fff;
+    border-radius: 4px;
+    -webkit-tap-highlight-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-family: inherit;
+} */
+
+/* .pageNotFound__inner .go__back:active {
+    scale: 1.02;
+} */
+
+/* @media (hover: hover) {
+    .pageNotFound__inner .go__back:hover {
+        background-color: #605ef2;
+    }
+} */
