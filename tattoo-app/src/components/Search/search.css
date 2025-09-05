@@ -1,10 +1,11 @@
 .search {
-     /* max-width: 650px; */
+    /* max-width: 650px; */
     width: 100%;
 }
 
 .search__inner {
     position: relative;
+   
 }
 
 .search__inner label {
@@ -22,7 +23,7 @@
 
 
 .search__inner input {
-    width: 100%;
+    width: 90%;
     padding: 8px 30px;
     border-radius: 99px;
     border: 1px solid transparent;
@@ -30,6 +31,7 @@
     outline-width: 2px;
     background-color: #e9eef6;
     font-size: 16px;
+    transition: background-color .2s ease-in-out; 
 }
 
 .search__inner input::placeholder {
@@ -41,8 +43,8 @@
     border: 1px solid #323232;
 }
 
-/* @media (hover: hover) {
+@media (hover: hover) {
     .search__inner input:hover {
-        background-color: #dbe1eb;
+        background-color: #d8e0e8;
     }
-} */
+}

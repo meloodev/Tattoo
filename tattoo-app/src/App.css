@@ -67,11 +67,10 @@ body {
 @media (max-width: 340px) {
     .products .products__items {
         grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-       /* gap: 10px; */
+        /* gap: 10px; */
     }
 }
 
-/* .container__inner {
-    display: flex;
-    gap: 10px;
-} */
+header .header__filter {
+    margin-bottom: 30px;
+}

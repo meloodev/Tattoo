@@ -1,7 +1,9 @@
 .filter__items {
     display: flex;
     align-items: center;
-    gap: 10px;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 12px;
 }
 
 

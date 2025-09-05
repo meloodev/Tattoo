@@ -1,0 +1,114 @@
+.header__inner {
+    min-height: 60px;
+    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto;
+    row-gap: 10px;
+    align-items: center;
+}
+
+.header__inner .header__logo {
+    padding-right: 20px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.header__inner .header__logo img {
+    width: 40px;
+    height: auto;
+}
+
+.header__inner .auth__cart {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__inner .header__signin {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    border-radius: 99px;
+    background-color: #e9eef6;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: inherit;
+    color: rgb(130, 121, 110);
+    transition: background-color .2s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+
+@media (hover: hover) {
+    .header__inner .header__signin:hover {
+        background-color: rgb(216, 224, 232);
+    }
+
+    .header__inner .header__cart:hover {
+        background-color: rgb(216, 224, 232);
+    }
+}
+
+.header__inner .header__signin:active {
+    background-color: rgb(186, 194, 202);
+}
+
+.header__inner .header__cart {
+    position: relative;
+    padding: 7px;
+    border-radius: 50%;
+    background-color: #e9eef6;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.header__inner .header__cart:active {
+    background-color: rgb(186, 194, 202);
+}
+
+.header__inner .header__cart span {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 2;
+    padding: 0px 5px;
+    background-color: rgb(186, 194, 202);
+    border-radius: 99px;
+    color: #000;
+}
+
+.header__inner .header__cart i {
+    color: rgb(104, 109, 114);
+}
+
+@media (max-width: 640px) {
+    .header__inner .search {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .header__inner .search input {
+        width: 100%;
+    }
+
+    .header__inner .auth__cart {
+        justify-content: flex-end;
+    }
+
+    .header__inner {
+        padding-top: 10px;
+    }
+
+    .header__logo {
+        padding-right: 0px;
+    }
+
+}

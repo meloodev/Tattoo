@@ -1,18 +1,27 @@
-import SignIn from "./components/SignIn/SignIn";
-import Registration from './components/Registration/Registration';
-import Recovery from './components/Recovery/Recovery';
-import PageNotFound from "./components/PageNotFound/PageNotFound";
-import CardItem from "./components/CardItem/CardItem";
-import MessageBox from "./components/MessageBox/MessageBox";
-import Modal from "./components/ModalMessage/ModalMessage";
-import Search from "./components/Search/Search";
-import CustomFilter from "./components/CustomFilter/CustomFilter";
+import SignIn from "@comp/SignIn/SignIn";
+import Registration from '@comp/Registration/Registration';
+import Recovery from '@comp/Recovery/Recovery';
+import PageNotFound from "@comp/PageNotFound/PageNotFound";
+import CardItem from "@comp/CardItem/CardItem";
+import MessageBox from "@comp/MessageBox/MessageBox";
+import Modal from "@comp/ModalMessage/ModalMessage";
+import CustomFilter from "@comp/CustomFilter/CustomFilter";
+import HeaderControls from "@comp/HeaderControls/HeaderControls";
+
+
 
 import './App.css';
 const App = () => {
   return (
     <>
-
+      <header>
+        <div className="container">
+          <HeaderControls />
+          <div className="header__filter">
+            <CustomFilter />
+          </div>
+        </div>
+      </header>
 
       <main>
         <section className="products">
@@ -24,24 +33,23 @@ const App = () => {
               <CardItem />
               <CardItem />
               <CardItem />
-              
             </ul>
           </div>
         </section>
       </main>
 
       {/* <div className="container"> */}
-        {/* <Search /> */}
-        {/* <CustomFilter /> */}
+      {/* <Search /> */}
+      {/* <CustomFilter /> */}
 
-        {/* <Modal/> */}
-        {/* <MessageBox/> */}
-        {/* <SignIn /> */}
-        {/* <Registration /> */}
-        {/* <Recovery /> */}
-        {/* <PageNotFound /> */}
+      {/* <Modal/> */}
+      {/* <MessageBox/> */}
+      {/* <SignIn /> */}
+      {/* <Registration /> */}
+      {/* <Recovery /> */}
+      {/* <PageNotFound /> */}
 
-        {/* <CardItem /> */}
+      {/* <CardItem /> */}
 
 
       {/* </div> */}

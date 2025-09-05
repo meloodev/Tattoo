@@ -98,7 +98,7 @@
 
 .card__price {
     /* font-size: 30px; */
-    font-size: clamp(1.25rem, 0.947rem + 1.515vw, 1.875rem);
+    font-size: clamp(1rem, 0.576rem + 2.121vw, 1.875rem);
     color: #0f172a;
     font-weight: 700;
 }
@@ -109,7 +109,7 @@
     color: #0f172a;
     text-decoration: line-through;
     /* padding-bottom: 5px; */
-    padding-bottom: clamp(0.25rem, 0.22rem + 0.152vw, 0.313rem);
+    padding-bottom: clamp(0.125rem, 0.034rem + 0.455vw, 0.313rem);
     font-weight: 400;
 }
 
