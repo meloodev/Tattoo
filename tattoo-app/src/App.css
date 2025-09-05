@@ -81,3 +81,7 @@ header .header__filter {
     z-index: 10;
     transition: all .4s ease-in-out;
 }
+
+.products__inner {
+    margin-bottom: 20px;
+}

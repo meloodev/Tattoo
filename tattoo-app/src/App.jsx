@@ -11,6 +11,7 @@ import HeaderControls from "@comp/HeaderControls/HeaderControls";
 import CardNotFound from "@comp/CardNotFound/CardNotFound";
 
 import Cart from "@comp/Cart/Cart";
+import LoadMore from "@comp/LoadMore/LoadMore";
 import './App.css';
 
 
@@ -27,12 +28,17 @@ const products = [
   { id: 10, percentsale: 12, productname: 'Apple Pencil', price: 99, oldprice: 113, rate: 1 }
 ];
 
+
 const App = () => {
   const [value, setValue] = useState('');
   const [filtered, setFiltered] = useState(products);
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
   const timerRef = useRef(null);
+
+  const [displayed, setDisplayed] = useState([]);
+  const [page, setPage] = useState(1);
+  const perPage = 3;
 
   const cartShown = () => {
     setShowCart(prev => !prev);
@@ -65,11 +71,10 @@ const App = () => {
         item.productname.toLowerCase().includes(target.toLowerCase().trim())
       );
       setFiltered(result);
-
-      // setPage(1); //
-      // setDisplayed(result.slice(0, perPage));//
     }, 300);
   }
+
+
 
   const updateQuantity = (productId, newQuantity) => {
     setCart(prevCart =>
@@ -102,6 +107,25 @@ const App = () => {
     });
   };
 
+
+  const loadMore = () => {
+    const nextPage = page + 1;
+    const start = (nextPage - 1) * perPage;
+    const end = start + perPage;
+    const nextItems = filtered.slice(start, end);
+
+    if (nextItems.length > 0) {
+      setDisplayed(prev => [...prev, ...nextItems]);
+      setPage(nextPage);
+    }
+  };
+
+  useEffect(() => {
+    setDisplayed(filtered.slice(0, perPage));
+    setPage(1);
+  }, [filtered]);
+
+
   return (
     <>
       <header>
@@ -121,7 +145,7 @@ const App = () => {
           <div className="container">
             <div className="products__inner">
               <ul className="products__items">
-                {filtered.length > 0 ? filtered.map((item) => (
+                {displayed.length > 0 ? displayed.map((item) => (
                   <CardItem
                     key={item.id}
                     product={item}
@@ -138,6 +162,12 @@ const App = () => {
                 removeFromCart={removeFromCart}
               />}
             </aside>
+
+            <LoadMore
+              onLoad={loadMore}
+              hasMore={displayed.length < filtered.length}
+            />
+
           </div>
         </section>
 
