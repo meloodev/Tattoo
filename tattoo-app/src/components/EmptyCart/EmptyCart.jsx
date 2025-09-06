@@ -1,5 +1,6 @@
 import './emptyCart.css';
 const EmptyCart = () => {
+    console.log('EmptyCart');
     return (
         <li className='cart__item-empty'>
             <i className="fa-solid fa-cart-shopping"></i>

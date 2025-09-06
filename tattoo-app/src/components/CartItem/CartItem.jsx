@@ -1,20 +1,28 @@
+import React, { useCallback, useMemo } from 'react';
 import './cartItem.css';
 const CartItem = ({ product, updateQuantity, removeFromCart }) => {
-    const { id, productname, price, quantity } = product;
+    console.log('CartItem');
 
-    const increment = () => {
+    const { id, productname, price, quantity } = product;
+    const increment = useCallback(() => {
         if (quantity < 100) {
             updateQuantity(id, quantity + 1);
         }
-    }
+    }, [id, quantity, updateQuantity])
 
-    const decrement = () => {
+
+
+    const decrement = useCallback(() => {
         if (quantity > 1) {
             updateQuantity(id, quantity - 1);
         }
-    }
+    }, [id, quantity, updateQuantity])
 
-    const total = price * quantity
+
+
+    const total = useMemo(() => {
+        return price * quantity
+    }, [price, quantity])
 
     return (
         <li className="cart__item">
@@ -23,7 +31,7 @@ const CartItem = ({ product, updateQuantity, removeFromCart }) => {
                 <div className="cart__item-btns">
                     <button disabled={quantity <= 1} onClick={decrement}>-</button>
                     <span>{quantity}</span>
-                    <button  disabled={quantity >= 100} onClick={increment}>+</button>
+                    <button disabled={quantity >= 100} onClick={increment}>+</button>
                 </div>
             </div>
             <div className="cart__item-details">
@@ -45,4 +53,4 @@ const CartItem = ({ product, updateQuantity, removeFromCart }) => {
     )
 }
 
-export default CartItem;
+export default React.memo(CartItem);

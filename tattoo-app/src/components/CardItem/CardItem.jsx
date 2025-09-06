@@ -1,8 +1,10 @@
+import React from "react";
 import cardImg from '@images/card-item.png';
 import './cardItem.css';
 
 const CardItem = ({ product, addToCart }) => {
-    const {percentsale, productname, price, oldprice, rate} = product;
+    const { percentsale, productname, price, oldprice, rate } = product;
+    console.log('CardItem');
     return (
         <li className="card">
             <div className="card__image">
@@ -35,4 +37,4 @@ const CardItem = ({ product, addToCart }) => {
     )
 }
 
-export default CardItem;
+export default React.memo(CardItem);

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import SignIn from "@comp/SignIn/SignIn";
 import Registration from '@comp/Registration/Registration';
 import Recovery from '@comp/Recovery/Recovery';
@@ -81,9 +81,11 @@ const App = () => {
   const [page, setPage] = useState(1);
   const perPage = 10;
 
-  const cartShown = () => {
+  const cartShown = useCallback(() => {
     setShowCart(prev => !prev);
-  }
+  }, [])
+
+
   const menuCartRef = useRef(null);
   useEffect(() => {
     function handleClickOutside(e) {
@@ -102,7 +104,7 @@ const App = () => {
   }, [showCart]);
 
 
-  const inputValue = (e) => {
+  const inputValue = useCallback((e) => {
     const target = e.target.value;
     setValue(target);
     clearTimeout(timerRef.current);
@@ -113,11 +115,11 @@ const App = () => {
       );
       setFiltered(result);
     }, 300);
-  }
+  }, [])
 
 
 
-  const updateQuantity = (productId, newQuantity) => {
+  const updateQuantity = useCallback((productId, newQuantity) => {
     setCart(prevCart =>
       prevCart.map(item =>
         item.id === productId
@@ -125,17 +127,17 @@ const App = () => {
           : item
       )
     );
-  };
 
-  const removeFromCart = (productId) => {
+  }, [])
+
+  const removeFromCart = useCallback((productId) => {
     setCart(prevCart => prevCart.filter(item => item.id !== productId));
-  };
+  }, [])
 
 
-  const addToCart = (product) => {
+  const addToCart = useCallback((product) => {
     setCart(prevCart => {
       let found = false;
-
       const newCart = prevCart.map(item => {
         if (item.id === product.id) {
           found = true;
@@ -146,10 +148,10 @@ const App = () => {
 
       return found ? newCart : [...prevCart, { ...product, quantity: 1 }];
     });
-  };
+  }, [])
 
 
-  const loadMore = () => {
+  const loadMore = useCallback(() => {
     const nextPage = page + 1;
     const start = (nextPage - 1) * perPage;
     const end = start + perPage;
@@ -159,7 +161,9 @@ const App = () => {
       setDisplayed(prev => [...prev, ...nextItems]);
       setPage(nextPage);
     }
-  };
+  }, [page, perPage, filtered])
+
+
 
   useEffect(() => {
     setDisplayed(filtered.slice(0, perPage));

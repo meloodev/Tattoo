@@ -1,9 +1,12 @@
+import React from 'react';
 import logo from '@images/logo.svg';
 import Search from "@comp/Search/Search";
 
 import './headerControls.css';
 const HeaderControls = ({ value, inputValue, items, cartShown }) => {
     const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
+
+    console.log('HeaderControls');
     return (
         <div className="header__inner">
             <a href="#" className="header__logo">
@@ -26,4 +29,4 @@ const HeaderControls = ({ value, inputValue, items, cartShown }) => {
     )
 }
 
-export default HeaderControls;
+export default React.memo(HeaderControls);

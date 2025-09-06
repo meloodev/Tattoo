@@ -1,6 +1,8 @@
+import React from 'react';
 import './customFilter.css';
 
 const CustomFilter = () => {
+    console.log('CustomFilter');
     return (
         <div className="filter">
             <ul className="filter__items">
@@ -14,4 +16,4 @@ const CustomFilter = () => {
     )
 }
 
-export default CustomFilter;
+export default React.memo(CustomFilter);
