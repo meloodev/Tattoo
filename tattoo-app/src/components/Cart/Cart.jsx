@@ -8,8 +8,9 @@ const Cart = ({ items, updateQuantity, removeFromCart }) => {
     return (
         <div className="cart">
             <div className="cart__header">
-                <h2 className="cart__title">
-                    <i className="fa-solid fa-cart-shopping"></i> <span>cart</span>
+                <h2 className="cart__close">
+                    <i className="fa-solid fa-xmark"></i>
+                    {/* <span>cart</span> */}
                 </h2>
                 <h3 className="cart__count">
                     <span>{totalItems}</span> pc</h3>

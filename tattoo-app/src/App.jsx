@@ -108,13 +108,27 @@ const App = () => {
     setShowCart(prev => !prev);
   }, [])
 
+  useEffect(() => {
+    if (showCart) {
+      document.body.classList.add('lock');
+    }
+
+    return () => {
+      document.body.classList.remove('lock');
+    }
+  }, [showCart])
+
 
   const menuCartRef = useRef(null);
   useEffect(() => {
     function handleClickOutside(e) {
-      if (menuCartRef.current &&
-        !menuCartRef.current.contains(e.target) &&
-        !e.target.closest('.card__btn')) {
+      if (!menuCartRef.current) return;
+
+      const clickedOutside = !menuCartRef.current.contains(e.target);
+      const clickedBtn = e.target.closest('.card__btn');
+      const clickedClose = e.target.closest('.cart__close');
+
+      if ((clickedOutside && !clickedBtn) || clickedClose) {
         setShowCart(false);
       }
     }

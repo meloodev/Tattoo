@@ -16,16 +16,29 @@
     padding-bottom: 20px;
 }
 
-.cart__title {
-    font-size: 20px;
-    font-weight: 600;
-    color: rgba(39, 44, 42, 0.6588235294);
-    /* padding-bottom: 20px; */
-    text-transform: capitalize;
+
+.cart__close {
+    padding: 5px;
+    cursor: pointer;
+    /* transition: all .2s ease-in-out; */
 }
 
-.cart__title i {
-    font-size: 17px;
+.cart__close {
+    font-size: 20px;
+    font-weight: 600;
+    color: #d2d2d2;
+}
+
+
+
+@media (hover: hover) {
+    .cart__close:hover {
+        scale: .9;
+    }
+}
+
+.cart__close:active {
+    scale: .9;
 }
 
 
