@@ -11,62 +11,85 @@ import HeaderControls from "@comp/HeaderControls/HeaderControls";
 import CardNotFound from "@comp/CardNotFound/CardNotFound";
 
 import Cart from "@comp/Cart/Cart";
-import LoadMore from "@comp/LoadMore/LoadMore";
+import LoadMoreBtn from "@comp/LoadMoreBtn/LoadMoreBtn";
 import './App.css';
 
 
 const products = [
-  { id: 1, percentsale: 25, productname: 'MacBook Air M2', price: 599, oldprice: 799, rate: 5 },
-  { id: 2, percentsale: 15, productname: 'iPhone 14', price: 849, oldprice: 999, rate: 4 },
-  { id: 3, percentsale: 30, productname: 'iPad Pro', price: 699, oldprice: 999, rate: 5 },
-  { id: 4, percentsale: 20, productname: 'Apple Watch', price: 319, oldprice: 399, rate: 4 },
-  { id: 5, percentsale: 10, productname: 'AirPods Pro', price: 219, oldprice: 249, rate: 5 },
-  { id: 6, percentsale: 35, productname: 'MacBook Pro 14"', price: 1799, oldprice: 2799, rate: 5 },
-  { id: 7, percentsale: 5, productname: 'Magic Keyboard', price: 89, oldprice: 94, rate: 4 },
-  { id: 8, percentsale: 50, productname: 'HomePod mini', price: 99, oldprice: 199, rate: 3 },
-  { id: 9, percentsale: 40, productname: 'iMac 24"', price: 1299, oldprice: 2199, rate: 2 },
-  { id: 10, percentsale: 12, productname: 'Apple Pencil', price: 99, oldprice: 113, rate: 1 },
-  { id: 11, percentsale: 22, productname: 'MacBook Air M2', price: 649, oldprice: 829, rate: 4 },
-  { id: 12, percentsale: 18, productname: 'iPhone 14', price: 899, oldprice: 1099, rate: 5 },
-  { id: 13, percentsale: 28, productname: 'iPad Pro', price: 729, oldprice: 1013, rate: 4 },
-  { id: 14, percentsale: 15, productname: 'Apple Watch', price: 349, oldprice: 411, rate: 3 },
-  { id: 15, percentsale: 8, productname: 'AirPods Pro', price: 229, oldprice: 249, rate: 5 },
-  { id: 16, percentsale: 40, productname: 'MacBook Pro 14"', price: 1699, oldprice: 2833, rate: 5 },
-  { id: 17, percentsale: 7, productname: 'Magic Keyboard', price: 79, oldprice: 85, rate: 4 },
-  { id: 18, percentsale: 45, productname: 'HomePod mini', price: 119, oldprice: 218, rate: 3 },
-  { id: 19, percentsale: 35, productname: 'iMac 24"', price: 1399, oldprice: 2154, rate: 2 },
-  { id: 20, percentsale: 10, productname: 'Apple Pencil', price: 109, oldprice: 121, rate: 1 },
-  { id: 21, percentsale: 20, productname: 'MacBook Air M2', price: 599, oldprice: 749, rate: 5 },
-  { id: 22, percentsale: 12, productname: 'iPhone 14', price: 849, oldprice: 965, rate: 4 },
-  { id: 23, percentsale: 32, productname: 'iPad Pro', price: 699, oldprice: 1030, rate: 5 },
-  { id: 24, percentsale: 25, productname: 'Apple Watch', price: 319, oldprice: 425, rate: 4 },
-  { id: 25, percentsale: 15, productname: 'AirPods Pro', price: 219, oldprice: 258, rate: 5 },
-  { id: 26, percentsale: 38, productname: 'MacBook Pro 14"', price: 1799, oldprice: 2903, rate: 5 },
-  { id: 27, percentsale: 5, productname: 'Magic Keyboard', price: 89, oldprice: 94, rate: 4 },
-  { id: 28, percentsale: 50, productname: 'HomePod mini', price: 99, oldprice: 198, rate: 3 },
-  { id: 29, percentsale: 40, productname: 'iMac 24"', price: 1299, oldprice: 2165, rate: 2 },
-  { id: 30, percentsale: 12, productname: 'Apple Pencil', price: 99, oldprice: 113, rate: 1 },
-  { id: 31, percentsale: 25, productname: 'MacBook Air M2', price: 599, oldprice: 799, rate: 5 },
-  { id: 32, percentsale: 15, productname: 'iPhone 14', price: 849, oldprice: 999, rate: 4 },
-  { id: 33, percentsale: 30, productname: 'iPad Pro', price: 699, oldprice: 999, rate: 5 },
-  { id: 34, percentsale: 20, productname: 'Apple Watch', price: 319, oldprice: 399, rate: 4 },
-  { id: 35, percentsale: 10, productname: 'AirPods Pro', price: 219, oldprice: 249, rate: 5 },
-  { id: 36, percentsale: 35, productname: 'MacBook Pro 14"', price: 1799, oldprice: 2799, rate: 5 },
-  { id: 37, percentsale: 5, productname: 'Magic Keyboard', price: 89, oldprice: 94, rate: 4 },
-  { id: 38, percentsale: 50, productname: 'HomePod mini', price: 99, oldprice: 199, rate: 3 },
-  { id: 39, percentsale: 40, productname: 'iMac 24"', price: 1299, oldprice: 2199, rate: 2 },
-  { id: 40, percentsale: 12, productname: 'Apple Pencil', price: 99, oldprice: 113, rate: 1 },
-  { id: 41, percentsale: 22, productname: 'MacBook Air M2', price: 649, oldprice: 829, rate: 4 },
-  { id: 42, percentsale: 18, productname: 'iPhone 14', price: 899, oldprice: 1099, rate: 5 },
-  { id: 43, percentsale: 28, productname: 'iPad Pro', price: 729, oldprice: 1013, rate: 4 },
-  { id: 44, percentsale: 15, productname: 'Apple Watch', price: 349, oldprice: 411, rate: 3 },
-  { id: 45, percentsale: 8, productname: 'AirPods Pro', price: 229, oldprice: 249, rate: 5 },
-  { id: 46, percentsale: 40, productname: 'MacBook Pro 14"', price: 1699, oldprice: 2833, rate: 5 },
-  { id: 47, percentsale: 7, productname: 'Magic Keyboard', price: 79, oldprice: 85, rate: 4 },
-  { id: 48, percentsale: 45, productname: 'HomePod mini', price: 119, oldprice: 218, rate: 3 },
-  { id: 49, percentsale: 35, productname: 'iMac 24"', price: 1399, oldprice: 2154, rate: 2 },
-  { id: 50, percentsale: 10, productname: 'Apple Pencil', price: 109, oldprice: 121, rate: 1 }
+  // iPhone
+  { id: 1, productname: 'iPhone 14 Pro', price: 999, oldprice: 1199, percentsale: 20, rate: 5 },
+  { id: 2, productname: 'iPhone 14', price: 849, oldprice: 999, percentsale: 15, rate: 4 },
+  { id: 3, productname: 'iPhone 13 Pro', price: 799, oldprice: 999, percentsale: 20, rate: 5 },
+  { id: 4, productname: 'iPhone 13', price: 699, oldprice: 899, percentsale: 15, rate: 4 },
+  { id: 5, productname: 'iPhone 12 Pro', price: 749, oldprice: 949, percentsale: 20, rate: 4 },
+  { id: 6, productname: 'iPhone 12', price: 649, oldprice: 849, percentsale: 15, rate: 5 },
+  { id: 7, productname: 'iPhone SE', price: 499, oldprice: 599, percentsale: 15, rate: 4 },
+  { id: 8, productname: 'iPhone 11', price: 599, oldprice: 699, percentsale: 15, rate: 4 },
+  { id: 9, productname: 'iPhone XR', price: 499, oldprice: 599, percentsale: 10, rate: 4 },
+  { id: 10, productname: 'iPhone XS', price: 449, oldprice: 549, percentsale: 15, rate: 4 },
+
+  // Samsung
+  { id: 11, productname: 'Samsung Galaxy S23', price: 899, oldprice: 1099, percentsale: 18, rate: 5 },
+  { id: 12, productname: 'Samsung Galaxy S22', price: 799, oldprice: 999, percentsale: 20, rate: 4 },
+  { id: 13, productname: 'Samsung Galaxy S21', price: 699, oldprice: 899, percentsale: 22, rate: 4 },
+  { id: 14, productname: 'Samsung Galaxy S20', price: 599, oldprice: 799, percentsale: 20, rate: 4 },
+  { id: 15, productname: 'Samsung Galaxy Note 20', price: 949, oldprice: 1149, percentsale: 18, rate: 5 },
+  { id: 16, productname: 'Samsung Galaxy Note 10', price: 849, oldprice: 1049, percentsale: 15, rate: 4 },
+  { id: 17, productname: 'Samsung Galaxy A53', price: 399, oldprice: 499, percentsale: 20, rate: 4 },
+  { id: 18, productname: 'Samsung Galaxy A33', price: 349, oldprice: 449, percentsale: 22, rate: 3 },
+  { id: 19, productname: 'Samsung Galaxy Z Fold 4', price: 1799, oldprice: 1999, percentsale: 10, rate: 5 },
+  { id: 20, productname: 'Samsung Galaxy Z Flip 4', price: 1299, oldprice: 1499, percentsale: 15, rate: 5 },
+
+  // MacBook
+  { id: 21, productname: 'MacBook Air M2', price: 1199, oldprice: 1399, percentsale: 15, rate: 5 },
+  { id: 22, productname: 'MacBook Air M1', price: 999, oldprice: 1199, percentsale: 17, rate: 4 },
+  { id: 23, productname: 'MacBook Pro 14"', price: 1999, oldprice: 2399, percentsale: 20, rate: 5 },
+  { id: 24, productname: 'MacBook Pro 16"', price: 2499, oldprice: 2899, percentsale: 18, rate: 5 },
+  { id: 25, productname: 'MacBook Pro M1', price: 1299, oldprice: 1499, percentsale: 15, rate: 4 },
+  { id: 26, productname: 'MacBook Air 2020', price: 899, oldprice: 1099, percentsale: 20, rate: 4 },
+  { id: 27, productname: 'MacBook Pro 2019', price: 1399, oldprice: 1599, percentsale: 15, rate: 4 },
+  { id: 28, productname: 'MacBook Air 2019', price: 799, oldprice: 999, percentsale: 15, rate: 3 },
+  { id: 29, productname: 'MacBook Pro 2018', price: 1199, oldprice: 1399, percentsale: 18, rate: 4 },
+  { id: 30, productname: 'MacBook Air 2018', price: 699, oldprice: 899, percentsale: 15, rate: 4 },
+
+  // iPad
+  { id: 31, productname: 'iPad Pro 12.9"', price: 1099, oldprice: 1299, percentsale: 15, rate: 5 },
+  { id: 32, productname: 'iPad Pro 11"', price: 899, oldprice: 1099, percentsale: 15, rate: 5 },
+  { id: 33, productname: 'iPad Air', price: 599, oldprice: 749, percentsale: 20, rate: 4 },
+  { id: 34, productname: 'iPad 10"', price: 499, oldprice: 599, percentsale: 15, rate: 4 },
+  { id: 35, productname: 'iPad 9"', price: 399, oldprice: 499, percentsale: 18, rate: 4 },
+  { id: 36, productname: 'iPad Mini', price: 349, oldprice: 449, percentsale: 20, rate: 4 },
+  { id: 37, productname: 'iPad Pro 2021', price: 999, oldprice: 1199, percentsale: 15, rate: 5 },
+  { id: 38, productname: 'iPad Air 2022', price: 699, oldprice: 849, percentsale: 15, rate: 4 },
+  { id: 39, productname: 'iPad 2020', price: 499, oldprice: 599, percentsale: 20, rate: 4 },
+  { id: 40, productname: 'iPad Mini 2021', price: 399, oldprice: 499, percentsale: 18, rate: 4 },
+
+  // Apple Watch 
+  { id: 41, productname: 'Apple Watch Series 8', price: 399, oldprice: 499, percentsale: 20, rate: 5 },
+  { id: 42, productname: 'Apple Watch SE', price: 249, oldprice: 299, percentsale: 15, rate: 4 },
+  { id: 43, productname: 'Apple Watch Series 7', price: 349, oldprice: 449, percentsale: 18, rate: 4 },
+  { id: 44, productname: 'Apple Watch Series 6', price: 299, oldprice: 399, percentsale: 20, rate: 4 },
+  { id: 45, productname: 'Apple Watch Nike', price: 349, oldprice: 449, percentsale: 15, rate: 4 },
+  { id: 46, productname: 'Apple Watch Hermès', price: 799, oldprice: 999, percentsale: 20, rate: 5 },
+  { id: 47, productname: 'Apple Watch SE 2', price: 259, oldprice: 309, percentsale: 15, rate: 4 },
+  { id: 48, productname: 'Apple Watch Ultra', price: 799, oldprice: 999, percentsale: 25, rate: 5 },
+  { id: 49, productname: 'Apple Watch Series 5', price: 299, oldprice: 399, percentsale: 15, rate: 4 },
+  { id: 50, productname: 'Apple Watch Series 4', price: 249, oldprice: 349, percentsale: 15, rate: 4 },
+
+  // AirPods 
+  { id: 51, productname: 'AirPods Pro 2', price: 249, oldprice: 299, percentsale: 15, rate: 5 },
+  { id: 52, productname: 'AirPods Pro 1', price: 199, oldprice: 249, percentsale: 20, rate: 4 },
+  { id: 53, productname: 'AirPods 3rd Gen', price: 179, oldprice: 219, percentsale: 18, rate: 4 },
+  { id: 54, productname: 'AirPods 2nd Gen', price: 129, oldprice: 159, percentsale: 15, rate: 4 },
+  { id: 55, productname: 'AirPods Max', price: 549, oldprice: 599, percentsale: 10, rate: 5 },
+  { id: 56, productname: 'AirPods Lite', price: 99, oldprice: 129, percentsale: 15, rate: 3 },
+  { id: 57, productname: 'AirPods Mini', price: 149, oldprice: 179, percentsale: 15, rate: 4 },
+  { id: 58, productname: 'AirPods Sport', price: 199, oldprice: 229, percentsale: 10, rate: 4 },
+  { id: 59, productname: 'AirPods Studio', price: 299, oldprice: 349, percentsale: 15, rate: 5 },
+  { id: 60, productname: 'AirPods Everyday', price: 179, oldprice: 209, percentsale: 12, rate: 4 }
 ];
+
+
 
 
 
@@ -115,6 +138,13 @@ const App = () => {
       );
       setFiltered(result);
     }, 300);
+  }, [])
+
+  const customSearch = useCallback((filt) => {
+    const res = products.filter(item =>
+      item.productname.toLowerCase().includes(filt.toLowerCase().trim())
+    );
+    setFiltered(res);
   }, [])
 
 
@@ -178,7 +208,7 @@ const App = () => {
           <div className="header__cover">
             <HeaderControls inputValue={inputValue} value={value} items={cart} cartShown={cartShown} />
             <div className="header__filter">
-              <CustomFilter />
+              <CustomFilter customSearch={customSearch} />
             </div>
           </div>
         </div>
@@ -208,7 +238,7 @@ const App = () => {
               />}
             </aside>
 
-            <LoadMore
+            <LoadMoreBtn
               onLoad={loadMore}
               hasMore={displayed.length < filtered.length}
             />

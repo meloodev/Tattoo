@@ -1,5 +1,5 @@
-import './loadMore.css';
-const LoadMore = ({ onLoad, hasMore }) => {
+import './loadMoreBtn.css';
+const LoadMoreBtn = ({ onLoad, hasMore }) => {
     return (
         <>
             {hasMore &&
@@ -12,4 +12,4 @@ const LoadMore = ({ onLoad, hasMore }) => {
     )
 }
 
-export default LoadMore;
+export default LoadMoreBtn;

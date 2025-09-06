@@ -1,16 +1,17 @@
 import React from 'react';
 import './customFilter.css';
 
-const CustomFilter = () => {
+
+const presets = ['iPhone', 'Samsung', 'MacBook', 'iPad', 'Apple', 'AirPods'];
+
+const CustomFilter = ({ customSearch }) => {
     console.log('CustomFilter');
     return (
         <div className="filter">
             <ul className="filter__items">
-                <li><a className="filter__item" href="#">iPhone</a></li>
-                <li><a className="filter__item" href="#">Galaxy</a></li>
-                <li><a className="filter__item" href="#">Pixel</a></li>
-                <li><a className="filter__item" href="#">ThinkPad</a></li>
-                <li><a className="filter__item" href="#">IdeaPad</a></li>
+                {presets.map((item, i) => (
+                    <li key={i}><a onClick={() => customSearch(item)} className="filter__item" href="#">{item}</a></li>
+                ))}
             </ul>
         </div>
     )
