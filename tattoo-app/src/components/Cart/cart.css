@@ -40,6 +40,10 @@
     display: none;
 }
 
+.cart__items:has(.cart__item-empty) {
+    margin: auto 0;
+}
+
 .cart__count {
     color: #2563eb;
     font-weight: 500;
