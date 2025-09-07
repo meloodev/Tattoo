@@ -178,8 +178,10 @@ const App = () => {
     setCart(prevCart => prevCart.filter(item => item.id !== productId));
   }, [])
 
+  const [loadingStates, setLoadingStates] = useState({});
 
   const addToCart = useCallback((product) => {
+    setLoadingStates((prev) => ({ ...prev, [product.id]: true }))
     setCart(prevCart => {
       let found = false;
       const newCart = prevCart.map(item => {
@@ -190,7 +192,13 @@ const App = () => {
         return item;
       });
 
-      return found ? newCart : [...prevCart, { ...product, quantity: 1 }];
+      const result = found ? newCart : [...prevCart, { ...product, quantity: 1 }];
+
+      setTimeout(() => {
+        setLoadingStates((prev) => ({ ...prev, [product.id]: false }))
+      }, 500);
+
+      return result;
     });
   }, [])
 
@@ -213,6 +221,7 @@ const App = () => {
     setDisplayed(filtered.slice(0, perPage));
     setPage(1);
   }, [filtered]);
+
 
 
   return (
@@ -239,6 +248,7 @@ const App = () => {
                     key={item.id}
                     product={item}
                     addToCart={addToCart}
+                    isLoading={loadingStates[item.id] || false}
                   />
                 )) : <CardNotFound />}
               </ul>

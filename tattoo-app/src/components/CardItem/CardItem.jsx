@@ -1,8 +1,9 @@
 import React from "react";
 import cardImg from '@images/card-item.png';
+import Spinner from '@comp/Spinner/Spinner';
 import './cardItem.css';
 
-const CardItem = ({ product, addToCart }) => {
+const CardItem = ({ product, addToCart, isLoading }) => {
     const { percentsale, productname, price, oldprice, rate } = product;
     console.log('CardItem');
     return (
@@ -31,6 +32,7 @@ const CardItem = ({ product, addToCart }) => {
             <a onClick={() => addToCart(product)} className="card__btn">
                 <i className="fa-solid fa-cart-plus"></i>
                 Add to cart
+                {isLoading && <Spinner />}
             </a>
 
         </li>
