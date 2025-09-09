@@ -6,14 +6,21 @@ import products from "@products/products";
 import img from '@images/card-item.png';
 import './cardPage.css';
 
-const CardDetails = () => {
+const CardDetails = ({ addToCart }) => {
     const navigate = useNavigate();
     const { id } = useParams();
+
+    //{ addToCart, displayed }
+    //  let productItem = displayed.filter((item) => (item.id === Number(id)));
+
+
+    // console.log(productItem);
 
 
     const itemData = products.find(item => item.id === Number(id));
     const { productname, rate, percentsale, price } = itemData;
-    console.log(itemData);
+    //console.log(itemData.id);
+
     //   { id: 60, productname: 'AirPods Everyday', price: 179, oldprice: 209, percentsale: 12, rate: 4 }
     return (
         <div className="info">
@@ -50,7 +57,8 @@ const CardDetails = () => {
                     </div>
                 </div>
                 <div className="info__btns">
-                    <button onClick={() => navigate('/')}>add to card {id}</button>
+                    <button onClick={() => navigate('/')}>go back</button>
+                    <button onClick={() => addToCart(itemData)}>add to cart</button>
                 </div>
             </div>
         </div>

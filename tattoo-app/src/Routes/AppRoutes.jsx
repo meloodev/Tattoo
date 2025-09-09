@@ -15,7 +15,11 @@ const AppRoutes = ({ displayed, addToCart, loadingStates, loadMore, filtered }) 
                     loadMore={loadMore}
                     filtered={filtered} />} />
 
-            <Route path="/card/:id" element={<CardPage />} />
+            <Route path="/card/:id" element={<CardPage
+                addToCart={addToCart}
+                loadingStates={loadingStates}
+            />} />
+
             <Route path="*" element={<PageNotFound />} />
         </Routes>
     )

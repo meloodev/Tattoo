@@ -1,3 +1,4 @@
+import React from 'react';
 import CardItem from '@comp/Carditem/CardItem';
 import CardNotFound from '@pages/CardNotFound/CardNotFound';
 import LoadMoreBtn from '@comp/LoadMoreBtn/LoadMoreBtn';
@@ -25,4 +26,4 @@ const MainPage = ({ displayed, addToCart, loadingStates, loadMore, filtered }) =
     )
 }
 
-export default MainPage;
+export default React.memo(MainPage);
