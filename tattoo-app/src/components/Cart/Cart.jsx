@@ -4,7 +4,7 @@ import EmptyCart from '@comp/EmptyCart/EmptyCart';
 import './cart.css';
 const Cart = ({ items, updateQuantity, removeFromCart }) => {
     const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
-    console.log('Cart');
+   // console.log('Cart');
     return (
         <div className="cart">
             <div className="cart__header">

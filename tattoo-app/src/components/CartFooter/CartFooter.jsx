@@ -4,7 +4,7 @@ const CartFooter = ({ items }) => {
 
     const totalAmount = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
-    console.log('CartFooter');
+    // console.log('CartFooter');
     return (
         <div className="cart__footer">
             <div className="cart__footer-head">

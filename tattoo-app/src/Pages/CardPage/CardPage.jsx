@@ -17,9 +17,9 @@ const CardDetails = ({ addToCart }) => {
     // console.log(productItem);
 
 
-    const itemData = products.find(item => item.id === Number(id));
+     const itemData = products.find(item => item.id === Number(id));
     const { productname, rate, percentsale, price } = itemData;
-    //console.log(itemData.id);
+    // console.log('CardDetails');
 
     //   { id: 60, productname: 'AirPods Everyday', price: 179, oldprice: 209, percentsale: 12, rate: 4 }
     return (

@@ -11,7 +11,10 @@ const CardItem = ({ product, addToCart, isLoading }) => {
     }
 
     const { percentsale, productname, price, oldprice, rate } = product;
-    console.log('CardItem');
+    // console.log('CardItem', productname);
+        // console.log('CardItem');
+   
+
     return (
         <li className="card">
             <div onClick={setCardId} className="card__image">

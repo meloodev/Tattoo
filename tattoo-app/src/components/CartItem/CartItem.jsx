@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
 import './cartItem.css';
 const CartItem = ({ product, updateQuantity, removeFromCart }) => {
-    console.log('CartItem');
+    //console.log('CartItem');
 
     const { id, productname, price, quantity } = product;
     const increment = useCallback(() => {

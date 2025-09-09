@@ -1,10 +1,12 @@
 import { Routes, Route } from "react-router";
 
+
 import MainPage from "@pages/MainPage/MainPage";
 import PageNotFound from '@pages/PageNotFound/PageNotFound';
 import CardPage from "@pages/CardPage/CardPage";
 
 const AppRoutes = ({ displayed, addToCart, loadingStates, loadMore, filtered }) => {
+
     return (
         <Routes>
             <Route path="/" element={

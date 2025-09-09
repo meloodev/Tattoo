@@ -2,7 +2,7 @@ import React from 'react';
 import './search.css';
 
 const Search = ({ value, inputValue }) => {
-    console.log('Search');
+    // console.log('Search');
     return (
         <div className="search">
             <div className="search__inner">

@@ -5,7 +5,7 @@ import './customFilter.css';
 const presets = ['iPhone', 'Samsung', 'MacBook', 'iPad', 'Apple', 'AirPods'];
 
 const CustomFilter = ({ customSearch }) => {
-    console.log('CustomFilter');
+    // console.log('CustomFilter');
     return (
         <div className="filter">
             <ul className="filter__items">

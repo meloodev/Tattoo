@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import products from './db/products';
 import SignIn from "@comp/SignIn/SignIn";
-import Registration from '@comp/Registration/Registration';
+// import Registration from '@comp/Registration/Registration';
 import Recovery from '@comp/Recovery/Recovery';
 // import PageNotFound from "@comp/PageNotFound/PageNotFound";
 import CardItem from "@comp/CardItem/CardItem";

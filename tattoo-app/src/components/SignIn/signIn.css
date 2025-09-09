@@ -1,32 +1,37 @@
 .signin {
+    /* width: 100%;
+    max-width: 550px; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    max-width: clamp(18.75rem, -1.25rem + 100.000vw, 21.25rem);
     width: 100%;
-    max-width: 550px;
-}
 
-.signin form {
-    padding: clamp(1.25rem, -4rem + 22.400vw, 3rem);
+    padding: 27px;
     border: 1px solid #0000001a;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 17px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.signin__header {
-    margin-bottom: 18px;
-    text-align: center;
+.signin__close {
+    text-align: right;
+
+    -webkit-tap-highlight-color: transparent;
 }
 
-.signin__header img {
-    padding-bottom: 10px;
-    width: 47px;
-    height: auto;
+.signin__close i {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
 }
 
-.signin__header .signin__title {
-    font-weight: 700;
-    color: #101828;
-    text-transform: capitalize;
+.signin__close i:active {
+    scale: 1.05;
 }
+
 
 .signin form .input {
     border: 1px solid #d1d5dc;
@@ -62,7 +67,7 @@
     width: 100%;
     min-height: 100%;
     font-weight: 300;
-} 
+}
 
 .signin__email svg {
     position: absolute;

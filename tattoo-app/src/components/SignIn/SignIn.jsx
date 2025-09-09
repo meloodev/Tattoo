@@ -1,5 +1,5 @@
 import './signIn.css';
-import logo from '@images/logo.svg';
+// import logo from '@images/logo.svg';
 import github from '@images/github.svg';
 import google from '@images/google.svg';
 
@@ -27,7 +27,7 @@ const schema = z.object({
 
 
 
-const SignIn = () => {
+const SignIn = ({ showSign, formcontrol }) => {
 
     const [password, setPassword] = useState(true);
     const viewPassword = () => {
@@ -35,8 +35,9 @@ const SignIn = () => {
         if (passLen.length > 0) {
             setPassword(val => !val);
         }
-
     }
+
+
 
 
     const { watch, register, handleSubmit, formState: { errors } } = useForm({
@@ -50,10 +51,9 @@ const SignIn = () => {
     };
 
     return (
-        <div className="signin">
-            <div className="signin__header">
-                <img className="signin__logo" src={logo} alt="signin-logo" />
-                <div className="signin__title">Sign in to your account</div>
+        <div className="signin" ref={formcontrol}>
+            <div className="signin__close">
+                <i onClick={showSign} className="fa-solid fa-xmark"></i>
             </div>
             <form onSubmit={handleSubmit(onSubmit)} noValidate>
                 <div className="signin__email">
