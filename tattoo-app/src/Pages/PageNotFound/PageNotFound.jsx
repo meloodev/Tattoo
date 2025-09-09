@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import './pageNotFound.css';
 
 const PageNotFound = () => {
@@ -7,7 +8,7 @@ const PageNotFound = () => {
                 <h2>
                     <span>404</span>|<span>Not Found</span>
                 </h2>
-                <a className='go__back' href='#'>back to home page</a>
+                <Link to='/' className='go__back' href='#'>back to home page</Link>
             </div>
         </div>
     )

@@ -1,14 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router";
 import cardImg from '@images/card-item.png';
 import Spinner from '@comp/Spinner/Spinner';
 import './cardItem.css';
 
 const CardItem = ({ product, addToCart, isLoading }) => {
+    const navigate = useNavigate();
+    const setCardId = () => {
+        navigate(`/card/${product.id}`);
+    }
+
     const { percentsale, productname, price, oldprice, rate } = product;
     console.log('CardItem');
     return (
         <li className="card">
-            <div className="card__image">
+            <div onClick={setCardId} className="card__image">
                 <img src={cardImg} alt="img" />
                 <span>{percentsale}% OFF</span>
             </div>

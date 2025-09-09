@@ -10,6 +10,7 @@
     position: relative;
     /* margin-bottom: 16px; */
     margin-bottom: clamp(0.625rem, 0.443rem + 0.909vw, 1rem);
+    cursor: pointer;
 }
 
 .card__image img {
@@ -140,7 +141,7 @@
 }
 
 .spinner {
-     position: absolute;
+    position: absolute;
     top: 20%;
     transform: translateY(-50%);
     right: 3%;
