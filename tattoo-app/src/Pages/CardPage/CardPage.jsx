@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import products from "@products/products";
 
 import img from '@images/card-item.png';
+
+import PageNotFound from '@pages/PageNotFound/PageNotFound';
 import './cardPage.css';
 
 const CardDetails = ({ addToCart, items }) => {
@@ -20,6 +22,11 @@ const CardDetails = ({ addToCart, items }) => {
 
 
     const itemData = products.find(item => item.id === Number(id));
+
+    if (!itemData) {
+        return <PageNotFound />
+    }
+
     const { productname, rate, percentsale, price } = itemData;
     // console.log(itemData);
     // const { quantity } = items;
