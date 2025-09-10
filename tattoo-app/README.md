@@ -1,12 +1,27 @@
-# React + Vite
+# Online Store Test Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a test online store built with React. Initially, the project required creating at least ten components from ClickUp, which were completed successfully. Later, the components were repurposed into this online store project, with fully functional product cards and dynamic features.  
 
-Currently, two official plugins are available:
+## Technologies & Tools
+- **React** (`useState`, `React.memo`) for state management and performance optimization  
+- **React Hook Form + Zod** for form handling and multi-level input validation  
+- **React Router** for navigation and passing data between components  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Components & Features
+- **Cart** – Add/remove products, update quantities (1–100), calculate total count and price  
+- **ProductCard** – Displays individual products with basic information and navigation to the detailed page  
+- **ProductPage** – Shows detailed product info and allows adding to cart  
+- **RegistrationForm** – Multi-field validation for user registration  
+- **LoginForm** – User authentication with email and password validation  
+- **PageNotFound** – 404 page for invalid routes  
+- **LoadMoreButton** – Lazy-loads product cards for better performance  
+- **SearchComponent** – Search for specific products within the catalog  
+- **CustomFilter** – Filter products by categories, price range, and other attributes  
+- **Spinner** – Loading indicator that disappears after 200ms  
+- **MessageBox** – Displays hints, tips, or notifications for user interactions  
 
-## Expanding the ESLint configuration
+## Project Status
+The project is still under development and can be expanded with additional features in the future. All core requirements, including at least ten functional components, have been successfully fulfilled.  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Notes
+The repository name remained `tattoo` because the components were originally built for that project, before being repurposed for this online store.
