@@ -119,9 +119,7 @@ const App = () => {
         }
         return item;
       });
-
       const result = found ? newCart : [...prevCart, { ...product, quantity: 1 }];
-
       setTimeout(() => {
         setLoadingStates((prev) => ({ ...prev, [product.id]: false }))
       }, 500);
@@ -173,6 +171,7 @@ const App = () => {
               <AppRoutes
                 displayed={displayed}
                 addToCart={addToCart}
+                 items={cart}
                 loadingStates={loadingStates}
                 loadMore={loadMore}
                 filtered={filtered}

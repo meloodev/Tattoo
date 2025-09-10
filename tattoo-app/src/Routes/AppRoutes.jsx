@@ -5,7 +5,7 @@ import MainPage from "@pages/MainPage/MainPage";
 import PageNotFound from '@pages/PageNotFound/PageNotFound';
 import CardPage from "@pages/CardPage/CardPage";
 
-const AppRoutes = ({ displayed, addToCart, loadingStates, loadMore, filtered }) => {
+const AppRoutes = ({ displayed, addToCart, items, loadingStates, loadMore, filtered }) => {
 
     return (
         <Routes>
@@ -20,6 +20,7 @@ const AppRoutes = ({ displayed, addToCart, loadingStates, loadMore, filtered }) 
             <Route path="/card/:id" element={<CardPage
                 addToCart={addToCart}
                 loadingStates={loadingStates}
+                items={items}
             />} />
 
             <Route path="*" element={<PageNotFound />} />
