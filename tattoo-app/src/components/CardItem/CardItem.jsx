@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import cardImg from '@images/card-item.png';
+import cardImg from '@images/card-item.webp';
 import Spinner from '@comp/Spinner/Spinner';
 import './cardItem.css';
 
