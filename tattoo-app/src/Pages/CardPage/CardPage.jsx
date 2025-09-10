@@ -1,25 +1,13 @@
 import { useParams, useNavigate } from "react-router";
 import React from 'react'
-
 import { useState, useEffect } from "react";
-
 import products from "@products/products";
-
 import img from '@images/card-item.png';
-
 import PageNotFound from '@pages/PageNotFound/PageNotFound';
 import './cardPage.css';
-
 const CardDetails = ({ addToCart, items }) => {
     const navigate = useNavigate();
     const { id } = useParams();
-
-    //{ addToCart, displayed }
-    //  let productItem = displayed.filter((item) => (item.id === Number(id)));
-
-
-    // console.log(items);
-
 
     const itemData = products.find(item => item.id === Number(id));
 

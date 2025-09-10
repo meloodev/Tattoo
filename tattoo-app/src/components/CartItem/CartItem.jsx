@@ -13,9 +13,13 @@ const CartItem = ({ product, updateQuantity, removeFromCart }) => {
 
 
     const decrement = useCallback(() => {
-        if (quantity > 1) {
-            updateQuantity(id, quantity - 1);
+        // if (quantity > 0) {
+        if (quantity === 1) {
+             removeFromCart(id);
         }
+        updateQuantity(id, quantity - 1);
+        
+        // }
     }, [id, quantity, updateQuantity])
 
 
@@ -35,7 +39,7 @@ const CartItem = ({ product, updateQuantity, removeFromCart }) => {
             </div>
             <div className="cart__item-details">
                 <div className="cart__item-btns">
-                    <button disabled={quantity <= 1} onClick={decrement}>-</button>
+                    <button  onClick={decrement}>-</button>
                     <span>{quantity}</span>
                     <button disabled={quantity >= 100} onClick={increment}>+</button>
                 </div>

@@ -171,7 +171,7 @@ const App = () => {
               <AppRoutes
                 displayed={displayed}
                 addToCart={addToCart}
-                 items={cart}
+                items={cart}
                 loadingStates={loadingStates}
                 loadMore={loadMore}
                 filtered={filtered}
