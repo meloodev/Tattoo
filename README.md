@@ -1,18 +1,27 @@
-    Initially, the project required creating at least ten components from ClickUp, which I completed successfully. Later, I assembled a test project — an online store with fully functional product cards. I applied modern React features such as useState for state management and React.memo for performance optimization and caching. For form handling and validation, I used react-hook-form in combination with zod schemas to ensure robust multi-level input validation. The project is still under development and can be further expanded with additional features in the future.
+# Online Store Test Project
 
-The repository name remained tattoo because the components were originally built for that project, and later I decided to repurpose them for the online store.
-The application includes the following core components and features:
-Cart – allows adding and removing products, updating individual product quantities (1–100), calculating total product counts, and computing the total price.
-ProductCard – displays individual products with basic information and allows navigation to the detailed product page.
-ProductPage – provides detailed information about a selected product and allows adding it to the cart directly.
-RegistrationForm – includes multiple input fields with validation, ensuring correct user data before submission.
-LoginForm – handles user authentication with validation for email, password, and other necessary fields.
-PageNotFound – a 404 page displayed when the user navigates to an invalid route.
-LoadMoreButton – enables lazy-loading of product cards to avoid rendering all items at once, improving performance.
-SearchComponent – allows users to search for specific products within the catalog.
-CustomFilter – lets users filter products based on categories, price ranges, or other attributes.
-Spinner – a loading indicator that appears during asynchronous actions and disappears after 200ms to provide smooth UX feedback.
-MessageBox – displays hints, tips, or notifications to guide users through interactions.
-Additional features include the use of React Router for passing data between components and enabling navigation across pages. All major functionalities are modularized into components to maintain a clean and scalable code structure.
+This project is a test online store built with React. Initially, the project required creating at least ten components from ClickUp, which were completed successfully. Later, the components were repurposed into this online store project, with fully functional product cards and dynamic features.  
 
-Overall, the project demonstrates a solid understanding of React fundamentals, component-based architecture, form validation, routing, state management, and performance optimization. All core requirements, including the creation of at least ten functional components, have been successfully fulfilled.
+## Technologies & Tools
+- **React** (`useState`, `React.memo`) for state management and performance optimization  
+- **React Hook Form + Zod** for form handling and multi-level input validation  
+- **React Router** for navigation and passing data between components  
+
+## Components & Features
+- **Cart** – Add/remove products, update quantities (1–100), calculate total count and price  
+- **ProductCard** – Displays individual products with basic information and navigation to the detailed page  
+- **ProductPage** – Shows detailed product info and allows adding to cart  
+- **RegistrationForm** – Multi-field validation for user registration  
+- **LoginForm** – User authentication with email and password validation  
+- **PageNotFound** – 404 page for invalid routes  
+- **LoadMoreButton** – Lazy-loads product cards for better performance  
+- **SearchComponent** – Search for specific products within the catalog  
+- **CustomFilter** – Filter products by categories, price range, and other attributes  
+- **Spinner** – Loading indicator that disappears after 200ms  
+- **MessageBox** – Displays hints, tips, or notifications for user interactions  
+
+## Project Status
+The project is still under development and can be expanded with additional features in the future. All core requirements, including at least ten functional components, have been successfully fulfilled.  
+
+## Notes
+The repository name remained `tattoo` because the components were originally built for that project, before being repurposed for this online store.
